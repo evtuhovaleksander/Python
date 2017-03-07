@@ -26,13 +26,13 @@ i=""
 #    i=input('Input team'+str(i)+' name \n')
 #    team_mas.append(i)
 
-print('Finished team inputing\n')
+print('\n\n Finished team inputing\n')
 
-print('Printing team info\n')
+print('\n\n Printing team info\n')
 for i in team_mas:
     print(i+"\n")
 
-print('Now making new order')
+print('\n\n Now making new order')
 
 order=[]#[-1,-1,-1,-1,-1,-1,-1,-1]
 i=0
@@ -44,29 +44,35 @@ while(i!=8):
         i+=1
 
 
-print('print new order')
+print('\n\n print new order')
 for i in order:
     print(i)
 
 
-print('Now Matching')
+print('\n\n Now Matching')
 
 matches=[]
 new_order=[]
 
-print('1/8 final matches')
+print('\n\n 1/8 final matches')
 for i in range(0,7,2):
     tmp=play_match(team_mas[order[i]],team_mas[order[i+1]],order[i],order[i+1])
     new_order.append(tmp[0])
     matches.append(tmp[1])
-
-print('1/4 final matches')
+order=new_order
+new_order=[]
+print('\n\n 1/4 final matches')
 for i in range(0,3,2):
     tmp=play_match(team_mas[order[i]],team_mas[order[i+1]],order[i],order[i+1])
     new_order.append(tmp[0])
     matches.append(tmp[1])
 
-print('1/2 final matches')
+
+order=new_order
+new_order=[]
+
+
+print('\n\n 1/2 final matches')
 for i in range(0,1,2):
     tmp=play_match(team_mas[order[i]],team_mas[order[i+1]],order[i],order[i+1])
     new_order.append(tmp[0])
@@ -76,11 +82,13 @@ for i in range(0,1,2):
 
 inp=""
 while(inp!="out"):
-    inp=input('input index of comand')
+    inp=input('\n\ninput index of comand\n')
+    if(inp=='out'):
+        break
     x=int(inp)
     for i in matches:
         if(i[0]==x or i[1]==x):
             print('There was a match')
-            print(team_mas[i[0]]+'  vs  '+team_mas[i[0]])
-print(new_order)
-print(matches)
+            print(team_mas[i[0]]+'  vs  '+team_mas[i[1]])
+            print('Score was '+str(i[2])+'x'+str(i[3]))
+
