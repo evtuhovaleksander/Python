@@ -101,7 +101,6 @@ while (col != 1):
 print('\n\nWinner of the championship is ' + team_mas[matches[len(matches) - 1][4]])
 
 
-#print(matches)
 
 inp = ""
 while (inp != "out"):
@@ -111,8 +110,4 @@ while (inp != "out"):
     x = int(inp)
     for i in matches:
         if (i[0] == x or i[1] == x):
-            #print('\n\nThere was a match')
-            #print('Between ' + team_mas[i(0)] + ' and ' + team_mas[i(1)])
-            #print('Score was ' + str(i(2)) + 'x' + str(i(3)))
-            #print('Winner was' + team_mas[i(4)])
             print_match(i)
